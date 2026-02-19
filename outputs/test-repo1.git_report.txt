@@ -1,3 +1,0 @@
-[ANALYZE] Analizando repo: test-repo1.git
-Resultado simulado de análisis y generación de contenido.
-Contenido listo para plataformas legales.
