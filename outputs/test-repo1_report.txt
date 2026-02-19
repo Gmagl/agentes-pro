@@ -1,0 +1,36 @@
+--- Reporte de test-repo1 ---
+Path: repos\test-repo1
+Archivos:
+- 2015-04-12-test-post-last-year.md
+- 2016-02-24-first-post.md
+- 2016-02-26-sample-post-jekyll.md
+- .git\config
+- .git\description
+- .git\HEAD
+- .git\index
+- .git\packed-refs
+- .git\hooks\applypatch-msg.sample
+- .git\hooks\commit-msg.sample
+- .git\hooks\fsmonitor-watchman.sample
+- .git\hooks\post-update.sample
+- .git\hooks\pre-applypatch.sample
+- .git\hooks\pre-commit.sample
+- .git\hooks\pre-merge-commit.sample
+- .git\hooks\pre-push.sample
+- .git\hooks\pre-rebase.sample
+- .git\hooks\pre-receive.sample
+- .git\hooks\prepare-commit-msg.sample
+- .git\hooks\push-to-checkout.sample
+- .git\hooks\sendemail-validate.sample
+- .git\hooks\update.sample
+- .git\info\exclude
+- .git\logs\HEAD
+- .git\logs\refs\heads\gh-pages
+- .git\logs\refs\remotes\origin\HEAD
+- .git\objects\pack\pack-485937e3672ec59868b616fbab7d57ee0e3f5971.idx
+- .git\objects\pack\pack-485937e3672ec59868b616fbab7d57ee0e3f5971.pack
+- .git\objects\pack\pack-485937e3672ec59868b616fbab7d57ee0e3f5971.rev
+- .git\refs\heads\gh-pages
+- .git\refs\remotes\origin\HEAD
+
+[INFO] Análisis completado.

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sofía Cloud</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+<div class="sidebar">
+  <h2>☁️ Sofía</h2>
+
+  <button onclick="goHome()">🏠 Dashboard</button>
+  <button onclick="openHF()">🤗 Hugging Face</button>
+  <button onclick="openGitHub()">🐙 GitHub</button>
+</div>
+
+<div class="main">
+  <h1>🚀 Proyectos</h1>
+  <div id="repos"></div>
+</div>
+
+<script>
+async function loadRepos() {
+  const res = await fetch("/api/repos");
+  const data = await res.json();
+
+  const container = document.getElementById("repos");
+  container.innerHTML = "";
+
+  data.forEach(repo => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <h3>${repo.name}</h3>
+      <button onclick="window.open('${repo.run_url}', '_blank')">
+        ▶️ Run App
+      </button>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+function goHome() {
+  location.reload();
+}
+
+function openHF() {
+  window.open("https://huggingface.co", "_blank");
+}
+
+function openGitHub() {
+  window.open("https://github.com", "_blank");
+}
+
+loadRepos();
+</script>
+
+</body>
+</html>

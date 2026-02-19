@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Sofía Cloud</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+    background:#0b1220;
+    color:white;
+}
+
+.card{
+    background:#111827;
+    border-radius:18px;
+    box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+
+.badge-running{
+    background:#16a34a;
+}
+
+.section-title{
+    font-weight:700;
+    margin-bottom:15px;
+}
+</style>
+</head>
+
+<body class="p-4">
+
+<h2 class="mb-4">🔥 Sofía Cloud Pública</h2>
+
+<!-- ================= APPS ACTIVAS ================= -->
+
+<div class="card p-3 mb-4">
+<div class="section-title">🚀 Apps activas</div>
+
+{% if running_apps %}
+<ul class="list-group">
+{% for name,data in running_apps.items() %}
+<li class="list-group-item bg-dark text-white">
+
+<strong>{{ name }}</strong>
+
+<span class="badge badge-running">
+Running : {{ data.port }}
+</span>
+
+<a href="http://localhost:{{ data.port }}" target="_blank" class="btn btn-success btn-sm">🌐 Abrir</a>
+<a href="/spaces_stop/{{ name }}" class="btn btn-warning btn-sm">⏹ Parar</a>
+
+</li>
+{% endfor %}
+</ul>
+{% else %}
+<p class="text-secondary">No hay apps corriendo</p>
+{% endif %}
+</div>
+
+<!-- ================= PROYECTOS ================= -->
+
+<div class="card p-3 mb-4">
+<div class="section-title">📦 Proyectos locales</div>
+
+<ul class="list-group">
+{% for p in proyectos %}
+<li class="list-group-item bg-dark text-white">
+
+<strong>{{ p }}</strong>
+
+<a href="/spaces_run/{{ p }}" class="btn btn-success btn-sm">▶ Ejecutar</a>
+<a href="/hf_prepare/{{ p }}" class="btn btn-info btn-sm">🤗 HF</a>
+<a href="/delete_project/{{ p }}" class="btn btn-danger btn-sm">🗑</a>
+
+</li>
+{% endfor %}
+</ul>
+</div>
+
+<!-- ================= REPOS ================= -->
+
+<div class="card p-3 mb-4">
+<div class="section-title">🔗 Repositorios</div>
+
+<form method="post" action="/clone_repo" class="mb-3">
+<input name="repo_url" class="form-control mb-2" placeholder="https://github.com/...">
+<button class="btn btn-primary">Clonar</button>
+</form>
+
+<ul class="list-group">
+{% for r in repos %}
+<li class="list-group-item bg-dark">
+<a href="{{ r }}" target="_blank" class="text-info">{{ r }}</a>
+</li>
+{% endfor %}
+</ul>
+</div>
+
+<!-- ================= VIDEOS ================= -->
+
+<div class="card p-3 mb-4">
+<div class="section-title">🎬 Videos</div>
+
+<form method="post" action="/procesar_video" enctype="multipart/form-data">
+<input type="file" name="video" class="form-control mb-2">
+<button class="btn btn-primary">Subir</button>
+</form>
+
+<ul>
+{% for v in videos %}
+<li><a href="/video/{{ v }}" target="_blank">{{ v }}</a></li>
+{% endfor %}
+</ul>
+</div>
+
+</body>
+</html>
