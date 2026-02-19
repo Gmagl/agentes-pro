@@ -1,3 +1,35 @@
-agentes/
-agentes - copia/
-videos/
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+
+# Entornos virtuales
+venv/
+env/
+ENV/
+.venv/
+
+# Carpetas de datos
+/data/
+/projects/
+/videos/
+/logs/
+/outputs/
+/repos/
+
+# Archivos de log
+*.log
+
+# Archivos binarios
+chromedriver.exe
+chromedriver*/
+*.zip
+
+# IDE
+.vscode/
+.idea/
+
+# Sistema
+.DS_Store
+Thumbs.db
