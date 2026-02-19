@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  sofia-dashboard:
+    build: .
+    container_name: sofia-cloud
+    ports:
+      - "5000:5000"   # Mapea el puerto 5000 del contenedor al host
+    volumes:
+      # Persistencia de datos: proyectos, videos, logs, etc.
+      - ./data/projects:/app/projects
+      - ./data/videos:/app/videos
+      - ./data/logs:/app/logs
+      # Si usas repos.txt, también puedes persistirlo
+      - ./data/repos.txt:/app/repos.txt
+    environment:
+      - FLASK_ENV=production
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
