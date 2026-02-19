@@ -1,35 +1,29 @@
 # Python
 __pycache__/
-*.py[cod]
-*.so
-.Python
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+agentes/
 
-# Entornos virtuales
-venv/
-env/
-ENV/
-.venv/
-
-# Carpetas de datos
-/data/
-/projects/
-/videos/
-/logs/
-/outputs/
-/repos/
-
-# Archivos de log
+# Logs
 *.log
 
-# Archivos binarios
-chromedriver.exe
-chromedriver*/
-*.zip
+# Outputs dinámicos
+outputs/
+videos/
+repos/
+projects/
 
-# IDE
-.vscode/
-.idea/
+# Drivers y binarios
+chromedriver*
+*.exe
 
-# Sistema
+# OS
 .DS_Store
 Thumbs.db
+
+# VSCode / IDE
+.vscode/
+.idea/
